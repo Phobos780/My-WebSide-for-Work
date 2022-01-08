@@ -1,0 +1,1290 @@
+
+
+
+        /*************** G E N E R A L ***************/
+
+*{
+   box-sizing: border-box;
+}
+
+$linkColor: #09906e;
+$titleNavColor1: #e79f04;
+$bodyTexColor: #ffad33;
+$titleRighteColor: #bbff33;
+
+
+/******************************** **MIXIN** *************************************************/
+
+@mixin myLogo {
+  width: 110px;
+  
+}
+
+@mixin decoration-line($color, $width, $gauge, $marginLeft){
+  border: 0;
+  border-top: $gauge solid $color;
+  margin-left: $marginLeft;
+  margin-top: 10px;
+  width: $width;
+}
+
+@mixin myPicture($marginTop, $marginLeft, $width){
+  border-radius: 100%;
+  margin-top: $marginTop;
+  margin-left: $marginLeft;
+  width: $width;
+}
+
+@mixin title($margin, $size, $marginTop, $color){
+  text-align: center;
+  margin: $margin;
+  font-size: $size;
+  font-family: 'Bebas Neue', cursive;
+  margin-top: $marginTop;
+  color: $color;
+}
+
+@mixin titleRighte($fSize) {
+  font-weight: lighter;
+  font-family: 'Lexend Zetta', sans-serif;
+  font-size: $fSize;
+  color: $titleRighteColor;
+}
+@mixin boxRighte($marginTop, $marginLeft, $marginRighte){
+  margin-right: $marginRighte;
+  margin-left: $marginLeft;
+  margin-top: $marginTop;
+  background-image: 
+  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url(../images/p5.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  box-shadow: 0px 0px 9px 15px rgba(7, 7, 7, 0.9);/*per fare la sfumatura. ordine di dati: asse X, asse Y, livello di trasparenza di sfumatura, difusione di sfumatura, e i colori. se vuoi l'ombra dal altro lato basta che inserisci il numero negativo sul asse X o Y (piano cartesiano)*/
+  border-radius: 7px;
+}
+
+@mixin links{
+  color: $titleRighteColor;
+  padding: 5px 10px;
+}
+
+/******************************** **MIXIN END** *************************************************/
+
+html{/*la dimensione generale per tutti i testi*/
+  scroll-behavior: smooth;/*permette lo scrolling fluido*/
+  font-size: 75%;
+}
+
+
+body{
+  display: inline;
+  color: $bodyTexColor;
+  background-image: url(../images/p4.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;/*dimensione testo nel body*/
+}
+
+a{
+  text-decoration: none;/*sottoliniatura del testo nei link*/
+}
+
+.clearfix::after{/*lezione 52 clearfix. in pochi parole uniamo tutti gli oggetti nella sezione gallery in un unico oggetto*/
+  content: "";
+  clear: both;
+  display: table;
+}
+
+        /*
+        *********************************
+        *********** H E A D E R *********
+        *********************************
+        */
+
+header{
+  #bigBar{
+    #mySidebar{
+      display: flex;
+      flex-direction: column;
+      top: 0;/*cosi header è attacato su*/
+      border-right: 1px solid #d13a0c;
+      background-image:
+      linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1));
+      height: 100%;
+      width: 270px;
+      position: fixed;/*permette di fissare il header sul lato sinistro*/
+  
+      .titelLeftSide {
+        h4{
+          margin-top: 7px;
+          margin-bottom: 3px;
+          text-align: center;
+          color: $titleNavColor1;
+          font-size: 2rem;
+          font-family: 'Dancing Script', cursive;
+        }
+
+        .sorname{
+          @include title(9px, 3rem, 5px, #2db300);
+  
+        }
+      }
+    }
+  }
+
+  nav{
+    .menuNav{
+      font-family: 'Lexend Zetta', sans-serif;
+      margin-top: 10px;
+      margin-left: -35px;
+      text-align: left;
+      list-style-type: none; /*convertiamo una lista ordinata in una semplice (togliamo le paline su lato sinistra)*/
+      .material-icons{/*mini icona di fianco al num di cell*/
+        color: $titleNavColor1;
+        float: left;
+      }
+      li{
+        a{
+          margin-left: 15px;
+          color: $linkColor;
+          font-size: 1.5rem;/*dimensioni testo*/
+          text-transform: uppercase;/*tutto il testo maiuscolo*/
+        }
+
+      }
+      hr {
+        @include decoration-line(#0ACE99, 25px, 3px, 1px);
+      } 
+    }
+  }
+}
+
+        /*
+        ************************************
+        ************** M A I N *************
+        ************************************
+        */
+
+
+
+        
+  #main-content{
+    
+    float: right;
+    width: 70%;
+    padding: 30px;
+    font-family: 'Kalam', cursive;
+    font-size: 1.7rem;
+    h2{
+      padding-top: 17px;
+      padding-left: 10px;
+      @include titleRighte(2.1rem);
+    }
+    h3{
+      font-size: 2.7rem;
+      font-weight: lighter;
+      color: #00e6e6;
+      font-family: 'Zen Dots', cursive;
+      margin-bottom: -2px;
+    }
+    p{
+      margin-top: 3px;
+    }
+    #box1{// M A I N
+      
+      @include boxRighte(70px, 5px, 0px);
+      hr{
+        @include decoration-line($titleRighteColor, auto, 3px, 11px);
+      }
+      .profText{
+        padding: 5px;
+      }
+    }
+
+    #box2{// S E R V I C E S
+      @include boxRighte(150px, -190px, 180px);
+      hr{
+        @include decoration-line($titleRighteColor, auto, 3px, 11px)
+      }
+      .profText{
+        padding: 5px;
+      }
+    }
+
+    #box4{// C O N T A C T S
+      @include boxRighte(150px, -20px, 0px);
+      hr{
+        @include decoration-line($titleRighteColor, auto, 3px, 11px);
+      }
+      .profText{
+        padding: 5px;
+        p{
+          margin-top: 3px;
+        }
+      }
+      .myContacts{
+        display: flex;
+        justify-content: space-around;
+        padding: 5px;
+        font-size: 1.3rem;
+        .links{
+          @include links;
+          a{
+            color: $linkColor;
+            padding-left: 3px;
+          }
+        }
+        img{/*mini icona di fianco al num di cell*/
+        float: left;
+        width: 17px;
+        
+        }
+      }
+    }    
+  }
+
+
+
+          /*
+          ******************************************
+          *************** F O O T E R **************
+          ******************************************
+          */
+
+/************ beck to up button ***************/
+
+.btn{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  background-color: #2eb82e;
+  color: black;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.4s;
+  opacity: .5;
+
+}
+
+#footerBox{
+  clear: both;/*questo comando esola "FOOTER" da gli "FLOAT", cioè footer rimane sempre al suo posto*/
+  float: right;
+  width: 85%;
+  border-top: 1px solid #528415;
+  font-size: 1.2rem;/*dimensione del testo*/
+  padding-bottom: 80px;
+  padding-top: 20px;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+  .footerText{
+    text-align: center;
+    .material-icons{/*mini icone*/
+    font-size: 13px;
+    
+    }
+    .text1{
+      padding-left: 14px;
+    }
+  }
+  .footerLink{
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    
+    .links{
+      @include links;
+      a{
+        color: $linkColor;
+        padding-left: 3px;
+      }
+    }
+    img{/*mini icona di fianco al num di cell*/
+    float: left;
+    width: 17px;
+    }
+  }
+  .myLogo{
+    text-align: center;
+    margin: 15px 50px 5px 50px;
+    img{
+      @include myLogo;
+    }
+  }
+  .buttonClickMe{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+  }  
+}
+
+/**********************************************************************************************************************************************************************/
+
+                /**********************************************
+              **** M E D I A   Q U E R Y S   LE Z I O N E 55 ****
+                              === RESPONSIVE ===
+                **********************************************/
+
+  @media only screen and (min-width: 667px) {
+
+    header{
+      #bigBar{
+        display: none;
+      }
+    }
+
+    header {
+      #smallBar{
+        #mySidebarSmall{
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 2;
+          background-image:
+          linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+          opacity: .94;
+          top: 0;
+          left: 0;
+          overflow: hidden;
+          transition: 0.5s;
+          padding-top: 10px;
+          border-right: 1px solid #528415;
+    
+        .titelLeftSide {
+    
+          .sorname {
+            @include title(9px, 2.7rem, 5px, #2db300);
+    
+          }
+
+          h4{
+            margin-top: 7px;
+            margin-bottom: 10px;
+            text-align: center;
+            color: $titleNavColor1;
+            font-size: 1.7rem;
+            font-family: 'Dancing Script', cursive;
+          }
+        }
+        .menuNav{
+          .closebtn {
+            position: absolute;            
+            top: 5px;
+            right: 5px;
+            font-size: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: black;
+            color: #bbff33;
+            padding: 5px 10px 8px 10px;
+            border: none;
+    
+          }
+
+          .material-icons{/*mini icona di fianco al num di cell*/
+            font-size: 23px;
+            color: $titleNavColor1;
+            float: left;
+          }
+
+          li{
+            a{
+              padding: 2px 8px 8px 20px;
+              color: #09d3a0;
+              font-size: 1.2rem;/*dimensioni testo*/
+              text-transform: uppercase;/*tutto il testo maiuscolo*/
+              
+              display: block;
+              transition: 0.3s;
+            }
+          }
+          hr {
+            @include decoration-line(#0ACE99, 25px, 3px, 1px);
+            margin-top: 5px;
+          }
+        }      
+          .myFoto{
+            @include myPicture(25px, 13px, 200px);
+          }
+    }
+  }
+}
+
+  body{
+    .openbtn {
+      position: fixed;
+      border: 1.8px solid #09d3a0;
+      opacity: 0.7;
+      top: 15px;
+      left: 15px;
+      font-size: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #111;
+      color: #09d3a0;
+      padding: 10px 15px;
+      
+    }
+  }   
+
+  #flex #main-content #box4 a{
+    color: #00e6e6;
+    font-size: 1.2rem;
+
+  }
+
+  .buttonCookWithMe{
+    float: right;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+    border: 3px solid #e4640f;
+    color: #ffd700;
+    padding: 15px 120px;
+    margin: 5px 60px 30px 0;
+    text-decoration: none;
+    font-family: 'Passion One', cursive;
+    font-size: 2.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: 1.7s;
+   
+  }
+
+  .buttonCookWithMe:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: 0.7s;
+  }
+
+  .buttonCookLiquid{
+    display: none;
+  }
+}
+  
+  #footerBox{
+    width: 100%;
+    .myLogo{
+      text-align: center;
+      margin: 15px 50px 5px 50px;
+      img{
+        @include myLogo;
+      }
+    }
+
+    #seoChecker{
+      position: absolute;
+      right: 90px;
+      img{
+        width: 6rem;
+      }
+      
+    }
+  
+  }
+
+/***********************************************************************************************************************************************************************************************************************************************************************************************************/
+
+  @media only screen and (min-width: 1277px) {
+
+
+    nav{
+      .closebtn{
+        display: none;
+      }
+    }
+
+    #main{
+      .openbtn{
+        display: none;
+      }
+    }
+
+    header{
+      #smallBar{
+        display: none;
+      }
+    }
+
+    header{
+      #bigBar{
+        display:inherit;
+      }
+    }
+    
+  header{
+    #bigBar{
+        #mySidebar{
+          display: flex;
+          flex-direction: column;
+          top: 0;/*cosi header è attacato su*/
+          border-right: 1px solid #528415;
+          height: 100%;
+          width: 270px;
+          position: fixed;/*permette di fissare il header sul lato sinistro*/
+      
+          .titelLeftSide {
+            h4{
+              margin-top: 25px;
+              margin-bottom: 25px;
+              text-align: center;
+              color: $titleNavColor1;
+              font-size: 2.2rem;
+              font-family: 'Dancing Script', cursive;
+            }
+
+            .sorname{
+              @include title(9px, 3rem, 15px, #2db300);
+      
+            }
+          }
+        nav{
+          .menuNav{
+            font-family: 'Lexend Zetta', sans-serif;
+            margin-top: 10px;
+            margin-left: -35px;
+            text-align: left;
+            list-style-type: none; /*convertiamo una lista ordinata in una semplice (togliamo le paline su lato sinistra)*/
+            .material-icons{/*mini icona di fianco al num di cell*/
+              color: $titleNavColor1;
+              float: left;
+            }
+            li{
+              a{
+                margin-left: 15px;
+                color: $linkColor;
+                font-size: 1.5rem;/*dimensioni testo*/
+                text-transform: uppercase;/*tutto il testo maiuscolo*/
+              }
+              a:hover{
+                color: #40f2c8;
+              }
+      
+            }
+            hr {
+              @include decoration-line(#0ACE99, 25px, 3px, 1px);
+            } 
+          }
+        }
+        img{
+          @include myPicture(19px, 25px, 215px);
+        }
+      }
+    }
+  }
+
+    #mySidebar{
+      .lighteName:hover {/*ilumino mio nome cog-me*/
+        color: $titleNavColor1;
+        text-shadow: 0px 0 15px $titleNavColor1;
+      }
+
+      .lighteSorname:hover {/*ilumino mio nome cog-me*/
+        color: $titleNavColor1;
+        text-shadow: 0px 0 15px #009900;
+      }
+    }
+
+    /********** MINE **********/
+
+    #flex{
+      float: right;
+      width: auto;
+      
+      #main-content{
+        width: 80%;
+        padding: 65px;
+        font-family: 'Kalam', cursive;
+        font-size: 1.7rem;
+        h2{
+          padding-top: 17px;
+          padding-left: 10px;
+          @include titleRighte(2.1rem);
+        }
+        h3{
+          font-size: 2.9rem;
+          font-weight: lighter;
+          color: #00e6e6;
+          font-family: 'Zen Dots', cursive;
+          margin-bottom: -2px;
+        }
+        p{
+          margin-top: 3px;
+        }
+        #box1{// M A I N
+          @include boxRighte(110px, 0px, 0px);
+          hr{
+            @include decoration-line($titleRighteColor, auto, 3px, 11px);
+          }
+          .profText{
+            padding: 5px;
+          }
+        }
+    
+        #box2{// S E R V I C E S
+          @include boxRighte(170px, 0px, 0px);
+          hr{
+            @include decoration-line($titleRighteColor, auto, 3px, 11px)
+          }
+          .profText{
+            padding: 5px;
+          }
+        }
+    
+        #box4{// C O N T A C T S
+          @include boxRighte(170px, 0px, 0px);
+          hr{
+            @include decoration-line($titleRighteColor, auto, 3px, 11px);
+          }
+          .profText{
+            padding: 5px;
+            p{
+              margin-top: 3px;
+            }
+          }
+          .myContacts{
+            display: flex;
+            justify-content: space-around;
+            padding: 5px;
+            font-size: 1.3rem;
+            .links{
+              @include links;
+              a{
+                font-size: 2rem;
+                color: #00e6e6;
+                padding-left: 3px;
+              }
+            }
+            img{/*mini icona di fianco al num di cell*/
+            float: left;
+            width: 23px;
+            
+            }
+            .links{
+              transition: .9s;/*applichiamo un ritardo d'azzione (di ritorno)*/
+            }
+            .links:hover{
+              transition: .3s;/*applichiamo un ritardo d'azzione*/
+              transform: scale(1.7);
+            }
+          }
+        } 
+      }
+    }      
+
+
+          /*
+      ******************************************
+      *************** F O O T E R **************
+      ******************************************
+      */
+
+  /************ beck to up button ******************/
+
+  .btn:hover{
+    height: 80px;
+  }
+  
+  #footerBox{
+    clear: both;/*questo comando esola "FOOTER" da gli "FLOAT", cioè footer rimane sempre al suo posto*/
+    
+    width: 82.2%;
+    border-top: 1px solid #528415;
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+    url(../images/p4.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-size: 1.1rem;/*dimensione del testo*/
+    
+    
+    .footerText{
+      text-align: center;
+      .material-icons{/*mini icona di fianco al num di cell*/
+      font-size: 13px;
+      }
+      .text1{
+        padding-left: 14px;
+      }
+    }
+    .footerLink{
+      display: flex;
+      justify-content: space-around;
+      padding: 5px;
+
+      .links{
+        @include links;
+        a{
+          color: $linkColor;
+          padding-left: 3px;
+        }
+      }
+      img{/*mini icona di fianco al num di cell*/
+      float: left;
+      width: 17px;
+      }
+    }
+    .myLogo{
+      text-align: center;
+      margin: 15px 50px 5px 50px;
+      img{
+        @include myLogo;
+      }
+    }
+    .links a:hover{
+      color: #40f2c8;
+      text-decoration: underline;
+    }
+
+  }
+
+     /*************************************
+        ======= K E Y F R A M E S =======
+      ======= A N I M A T I O N S =======
+    *************************************/
+
+    #mySidebar{
+      opacity: 0;
+      animation-name: magicBar;
+      animation-duration: 2s;
+      animation-delay: .7s;
+      animation-fill-mode: forwards;
+      animation-direction: normal;//direzione della animazione (normal è da dx a sx)
+          
+    }
+ 
+    @keyframes magicBar{
+      0%{
+        opacity: 0;
+        transform:translateX(-50px);
+
+      }
+      100%{
+        opacity: 1;
+        transform:translateX(0px);
+
+      }
+    }
+
+  .titelLeftSide h1 {
+      opacity: 0;
+      animation-name: magic-text;
+      animation-duration: 1.2s;
+      animation-delay: 3s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in;
+    }
+  @keyframes magic-text {
+
+        0%{
+          opacity: 0;
+          transform:translateX(-50px);
+        }
+        100%{
+          opacity: 1;
+          transform:translateX(0px);
+        }
+  }
+
+  .titelLeftSide h4 {
+    opacity: 0;
+    animation-name: fraseH4;
+    animation-duration: 1.5s;
+    animation-delay: 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes fraseH4{
+    0%{
+      opacity: 0;
+      transform: translatey(-50px);
+    }
+    100%{
+      opacity: 1;
+      transform: translatey(0px);
+    }
+  }
+}
+  
+
+/********************************************************************************************************************************************************************************************************************************/
+
+  @media only screen and (max-width: 667px) {
+
+  header{
+    #bigBar{
+      display: none;
+    }
+  }
+
+        /********  SIDE BAR MOBILE  *********/
+
+      header {
+        #smallBar{
+          #mySidebarSmall{
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 2;
+            background-image:
+            linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+            opacity: .94;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            transition: 0.5s;
+            padding-top: 10px;
+            border-right: 1px solid #528415;
+      
+          .titelLeftSide {
+            .sorname {
+              @include title(9px, 2.7rem, 5px, #2db300);
+      
+            }
+
+            h4{
+              margin-top: 15px;
+              margin-bottom: 25px;
+              text-align: center;
+              color: $titleNavColor1;
+              font-size: 1.7rem;
+              font-family: 'Dancing Script', cursive;
+            }
+          }
+          .menuNav{
+            .closebtn {
+              position: absolute;            
+              top: 5px;
+              right: 5px;
+              font-size: 20px;
+              border-radius: 10px;
+              cursor: pointer;
+              background-color: black;
+              color: #bbff33;
+              padding: 5px 10px 8px 10px;
+              border: none;
+      
+            }
+
+            .material-icons{/*mini icona di fianco al num di cell*/
+              font-size: 23px;
+              color: $titleNavColor1;
+              float: left;
+            }
+
+            li{
+              a{
+                padding: 2px 8px 8px 20px;
+                color: #09d3a0;
+                font-size: 1.2rem;/*dimensioni testo*/
+                text-transform: uppercase;/*tutto il testo maiuscolo*/
+                
+                display: block;
+                transition: 0.3s;
+              }
+            }
+            hr {
+              @include decoration-line(#0ACE99, 25px, 3px, 1px);
+              margin-top: 5px;
+            }
+          }      
+            .myFoto{
+              @include myPicture(5px, 13px, 200px);
+            }
+      }
+    }
+  } 
+
+  body{
+    .openbtn {
+      position: fixed;
+      border: 1.8px solid #09d3a0;
+      top: 15px;
+      left: 15px;
+      font-size: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      opacity: 0.7;
+      background-color: #111;
+      color: #09d3a0;
+      padding: 10px 15px;
+      
+    }
+  }
+
+          /********** SDB END **********/
+
+    
+        /*
+        ************************************
+        ************** M A I N *************
+        ************************************
+        */
+  #main-content{
+    margin-top: 70px;
+    float: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    width: auto;
+    font-family: 'Kalam', cursive;
+    font-size: 1.3rem;
+    h2{
+      padding-top: 17px;
+      @include titleRighte(1.5rem);
+    }
+    h3{
+      font-size: 2.3rem;
+      font-weight: lighter;
+      color: #00e6e6;
+      font-family: 'Zen Dots', cursive;
+      margin-bottom: -2px;
+    }
+
+    #box1{// M A I N
+      @include boxRighte(100px, 0px, 0px);
+      hr{
+        @include decoration-line($titleRighteColor, auto, 3px, 11px);
+      }
+      .profText{
+        padding: 5px;
+      }
+    }
+
+    #box2{// S E R V I C E S
+      @include boxRighte(150px, 0, 0);
+      hr{
+        @include decoration-line($titleRighteColor, auto, 3px, 11px);
+      }
+      .profText{
+        padding: 5px;
+        p{
+          margin-top: 3px;
+        }
+      }
+    }
+
+    #box4{// C O N T A C T S
+      @include boxRighte(150px, 0px, 0px);
+      hr{
+        @include decoration-line($titleRighteColor, auto, 3px, 11px);
+      }
+      .profText{
+        padding: 5px;
+        p{
+          margin-top: 3px;
+        }
+      }
+      .myContacts{
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        .links{
+          @include links;
+          a{
+            font-size: 1.7rem;
+            color: #00e6e6;
+            padding-left: 1px;
+          }
+          img{/*mini icona*/
+            float: left;
+            width: 1.7rem;
+            }
+        }
+      }
+    }
+  }
+
+  
+ 
+  .buttonCookWithMe{
+    
+    display: none;       
+  }
+ 
+  a .buttonCookLiquid {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    display: block;
+    margin: 10px auto;
+    padding: 10px 80px;
+    border: 3px solid #e4640f;
+    display: flex;
+    width: 300px;  
+    overflow: hidden;
+    border-radius: 70px;
+    
+   }
+   
+   .buttonCookLiquid span {
+    position: relative;
+    color: #ffaa49;
+    font-family: 'Passion One', cursive;
+    font-size: 1.9rem; 
+    z-index: 1;
+   }
+   
+   .buttonCookLiquid .liquid {
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 300px;
+    height: 265px;
+    background: #2b0be4;
+    -webkit-box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+    -webkit-transition: .5s;
+    transition: .5s;
+   }
+   
+   .buttonCookLiquid .liquid::after,
+   .buttonCookLiquid .liquid::before {
+    content: '';
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, -75%);
+        -ms-transform: translate(-50%, -75%);
+            transform: translate(-50%, -75%);
+    background: #fff;
+   }
+   
+   .buttonCookLiquid .liquid::before {
+    border-radius: 45%;
+    background: rgba(20, 20, 20, 1);
+    -webkit-animation: animate 5s linear infinite;
+            animation: animate 5s linear infinite;
+   }
+   
+   .buttonCookLiquid .liquid::after {
+    border-radius: 40%;
+    background: rgba(20, 20, 20, .5);
+    -webkit-animation: animate 10s linear infinite;
+            animation: animate 10s linear infinite;
+   }
+   
+   button:hover .liquid {
+    top: -120px;
+   }
+   
+   @keyframes animate {
+    0% {
+     -webkit-transform: translate(-50%, -75%) rotate(0deg);
+             transform: translate(-50%, -75%) rotate(0deg);
+    }
+   
+    100% {
+     -webkit-transform: translate(-50%, -75%) rotate(360deg);
+             transform: translate(-50%, -75%) rotate(360deg);
+    }
+   }
+   
+  
+           /*
+          ******************************************
+          *************** F O O T E R **************
+          ******************************************
+          */
+
+  .btn{ 
+    bottom: 20px;
+    right: 20px;
+    width: 37px;
+    height: 37px;
+    font-size: 1.5rem;
+    background-color: #2eb82e;
+    color: black;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.4s;
+    opacity: .5;  
+  }
+  
+  #footerBox{
+    clear: both;/*questo comando esola "FOOTER" da gli "FLOAT", cioè footer rimane sempre al suo posto*/
+    position: relative;
+    width: 100%;
+    border-top: 1px solid #528415;
+    font-size: .8rem;/*dimensione del testo*/
+    .footerText{
+      color: #ffad33;
+      text-align: center;
+      .material-icons{/*mini icona di fianco al num di cell*/
+      font-size: 1.2rem;
+      }
+      .text1{
+        padding-left: 7px;
+      }
+    }
+    .footerLink{
+      display: flex;
+      justify-content: space-around;
+      
+      .links{
+        color: $titleRighteColor;
+        padding: 5px 1px;
+        a{
+          color: $linkColor;
+        }
+      }
+      img{/*mini icona di fianco al num di cell*/
+      float: left;
+      width: 1rem;
+      }
+    }
+    .myLogo{
+      text-align: center;
+      margin: 15px 50px 5px 50px;
+      img{
+        @include myLogo;
+      }
+    }
+  }
+  #seoChecker{
+    position: absolute;
+    left: 20px;
+    bottom: 5px;
+    img{
+      width: 5rem;
+    }
+    
+  }
+}        
+
+/********************************************************************************************************************************************************************************************************************************/
+
+@media only screen and (max-width: 373px) {
+
+        /********  SIDE BAR MOBILE  *********/
+
+      header {
+        #smallBar{
+          #mySidebarSmall{
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 2;
+            background-image:
+            linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+            opacity: .94;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            transition: 0.5s;
+            padding-top: 10px;
+            border-right: 1px solid #528415;
+      
+          .titelLeftSide {
+            .sorname {
+              @include title(9px, 2.7rem, 5px, #2db300);
+      
+            }
+  
+            h4{
+              margin-top: 5px;
+              margin-bottom: 5px;
+              text-align: center;
+              color: $titleNavColor1;
+              font-size: 1.5rem;
+              font-family: 'Dancing Script', cursive;
+            }
+          }
+          .menuNav{
+            .closebtn {
+              position: absolute;            
+              top: 5px;
+              right: 5px;
+              font-size: 20px;
+              border-radius: 10px;
+              cursor: pointer;
+              background-color: black;
+              color: #bbff33;
+              padding: 5px 10px 8px 10px;
+              border: none;
+      
+            }
+  
+            .material-icons{/*mini icona NAV*/
+              font-size: 17px;
+              color: $titleNavColor1;
+              float: left;
+            }
+  
+            li{
+              a{
+                padding: 2px 8px 5px 20px;
+                color: #09d3a0;
+                font-size: 1rem;/*dimensioni testo*/
+                text-transform: uppercase;/*tutto il testo maiuscolo*/
+                
+                display: block;
+                transition: 0.3s;
+              }
+            }
+            hr {
+              @include decoration-line(#0ACE99, 19px, 3px, 1px);
+              margin-top: 5px;
+            }
+          }      
+          .myFoto{
+            @include myPicture(-15px, 39px, 150px);
+          }
+      }
+    }
+  }
+  
+
+  #box4 .myContacts .links{
+    font-size: .7rem;
+  }
+
+
+    .footerLink{
+    .links{
+      font-size: .7rem;
+    }
+  }
+
+  #footerBox{
+    
+   .links img{
+      width: 10px;
+    }
+  }
+}
+
+/********************************************************************************************************************************************************************************************************************************/
+
+@media only screen and (min-width: 1600px){
+
+  
+  #flex{
+    float: right;
+    width: 65%;
+    margin-right: .6rem;
+    #main-content{
+      width: auto;
+      padding: 65px;
+      padding-right: 85px;
+      font-family: 'Kalam', cursive;
+      font-size: 1.8rem;
+      
+    }
+  }    
+
+  footer{
+    #footerBox{
+      width: 88%;
+
+    }
+  }
+}

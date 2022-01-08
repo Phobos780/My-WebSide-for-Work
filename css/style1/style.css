@@ -1,0 +1,1403 @@
+@charset "UTF-8";
+/*************** G E N E R A L ***************/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/******************************** **MIXIN** *************************************************/
+/******************************** **MIXIN END** *************************************************/
+html {
+  /*la dimensione generale per tutti i testi*/
+  scroll-behavior: smooth;
+  /*permette lo scrolling fluido*/
+  font-size: 75%;
+}
+
+body {
+  display: inline;
+  color: #ffad33;
+  background-image: url(../images/p4.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;
+  /*dimensione testo nel body*/
+}
+
+a {
+  text-decoration: none;
+  /*sottoliniatura del testo nei link*/
+}
+
+.clearfix::after {
+  /*lezione 52 clearfix. in pochi parole uniamo tutti gli oggetti nella sezione gallery in un unico oggetto*/
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*
+        *********************************
+        *********** H E A D E R *********
+        *********************************
+        */
+header #bigBar #mySidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  top: 0;
+  /*cosi header è attacato su*/
+  border-right: 1px solid #d13a0c;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(black));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), black);
+  height: 100%;
+  width: 270px;
+  position: fixed;
+  /*permette di fissare il header sul lato sinistro*/
+}
+
+header #bigBar #mySidebar .titelLeftSide h4 {
+  margin-top: 7px;
+  margin-bottom: 3px;
+  text-align: center;
+  color: #e79f04;
+  font-size: 2rem;
+  font-family: 'Dancing Script', cursive;
+}
+
+header #bigBar #mySidebar .titelLeftSide .sorname {
+  text-align: center;
+  margin: 9px;
+  font-size: 3rem;
+  font-family: 'Bebas Neue', cursive;
+  margin-top: 5px;
+  color: #2db300;
+}
+
+header nav .menuNav {
+  font-family: 'Lexend Zetta', sans-serif;
+  margin-top: 10px;
+  margin-left: -35px;
+  text-align: left;
+  list-style-type: none;
+  /*convertiamo una lista ordinata in una semplice (togliamo le paline su lato sinistra)*/
+}
+
+header nav .menuNav .material-icons {
+  /*mini icona di fianco al num di cell*/
+  color: #e79f04;
+  float: left;
+}
+
+header nav .menuNav li a {
+  margin-left: 15px;
+  color: #09906e;
+  font-size: 1.5rem;
+  /*dimensioni testo*/
+  text-transform: uppercase;
+  /*tutto il testo maiuscolo*/
+}
+
+header nav .menuNav hr {
+  border: 0;
+  border-top: 3px solid #0ACE99;
+  margin-left: 1px;
+  margin-top: 10px;
+  width: 25px;
+}
+
+/*
+        ************************************
+        ************** M A I N *************
+        ************************************
+        */
+#main-content {
+  float: right;
+  width: 70%;
+  padding: 30px;
+  font-family: 'Kalam', cursive;
+  font-size: 1.7rem;
+}
+
+#main-content h2 {
+  padding-top: 17px;
+  padding-left: 10px;
+  font-weight: lighter;
+  font-family: 'Lexend Zetta', sans-serif;
+  font-size: 2.1rem;
+  color: #bbff33;
+}
+
+#main-content h3 {
+  font-size: 2.7rem;
+  font-weight: lighter;
+  color: #00e6e6;
+  font-family: 'Zen Dots', cursive;
+  margin-bottom: -2px;
+}
+
+#main-content p {
+  margin-top: 3px;
+}
+
+#main-content #box1 {
+  margin-right: 0px;
+  margin-left: 5px;
+  margin-top: 70px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../images/p5.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/p5.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  -webkit-box-shadow: 0px 0px 9px 15px rgba(7, 7, 7, 0.9);
+          box-shadow: 0px 0px 9px 15px rgba(7, 7, 7, 0.9);
+  /*per fare la sfumatura. ordine di dati: asse X, asse Y, livello di trasparenza di sfumatura, difusione di sfumatura, e i colori. se vuoi l'ombra dal altro lato basta che inserisci il numero negativo sul asse X o Y (piano cartesiano)*/
+  border-radius: 7px;
+}
+
+#main-content #box1 hr {
+  border: 0;
+  border-top: 3px solid #bbff33;
+  margin-left: 11px;
+  margin-top: 10px;
+  width: auto;
+}
+
+#main-content #box1 .profText {
+  padding: 5px;
+}
+
+#main-content #box2 {
+  margin-right: 180px;
+  margin-left: -190px;
+  margin-top: 150px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../images/p5.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/p5.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  -webkit-box-shadow: 0px 0px 9px 15px rgba(7, 7, 7, 0.9);
+          box-shadow: 0px 0px 9px 15px rgba(7, 7, 7, 0.9);
+  /*per fare la sfumatura. ordine di dati: asse X, asse Y, livello di trasparenza di sfumatura, difusione di sfumatura, e i colori. se vuoi l'ombra dal altro lato basta che inserisci il numero negativo sul asse X o Y (piano cartesiano)*/
+  border-radius: 7px;
+}
+
+#main-content #box2 hr {
+  border: 0;
+  border-top: 3px solid #bbff33;
+  margin-left: 11px;
+  margin-top: 10px;
+  width: auto;
+}
+
+#main-content #box2 .profText {
+  padding: 5px;
+}
+
+#main-content #box4 {
+  margin-right: 0px;
+  margin-left: -20px;
+  margin-top: 150px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../images/p5.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/p5.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  -webkit-box-shadow: 0px 0px 9px 15px rgba(7, 7, 7, 0.9);
+          box-shadow: 0px 0px 9px 15px rgba(7, 7, 7, 0.9);
+  /*per fare la sfumatura. ordine di dati: asse X, asse Y, livello di trasparenza di sfumatura, difusione di sfumatura, e i colori. se vuoi l'ombra dal altro lato basta che inserisci il numero negativo sul asse X o Y (piano cartesiano)*/
+  border-radius: 7px;
+}
+
+#main-content #box4 hr {
+  border: 0;
+  border-top: 3px solid #bbff33;
+  margin-left: 11px;
+  margin-top: 10px;
+  width: auto;
+}
+
+#main-content #box4 .profText {
+  padding: 5px;
+}
+
+#main-content #box4 .profText p {
+  margin-top: 3px;
+}
+
+#main-content #box4 .myContacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 5px;
+  font-size: 1.3rem;
+}
+
+#main-content #box4 .myContacts .links {
+  color: #bbff33;
+  padding: 5px 10px;
+}
+
+#main-content #box4 .myContacts .links a {
+  color: #09906e;
+  padding-left: 3px;
+}
+
+#main-content #box4 .myContacts img {
+  /*mini icona di fianco al num di cell*/
+  float: left;
+  width: 17px;
+}
+
+/*
+          ******************************************
+          *************** F O O T E R **************
+          ******************************************
+          */
+/************ beck to up button ***************/
+.btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  background-color: #2eb82e;
+  color: black;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  opacity: .5;
+}
+
+#footerBox {
+  clear: both;
+  /*questo comando esola "FOOTER" da gli "FLOAT", cioè footer rimane sempre al suo posto*/
+  float: right;
+  width: 85%;
+  border-top: 1px solid #528415;
+  font-size: 1.2rem;
+  /*dimensione del testo*/
+  padding-bottom: 80px;
+  padding-top: 20px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.7)));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+}
+
+#footerBox .footerText {
+  text-align: center;
+}
+
+#footerBox .footerText .material-icons {
+  /*mini icone*/
+  font-size: 13px;
+}
+
+#footerBox .footerText .text1 {
+  padding-left: 14px;
+}
+
+#footerBox .footerLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 5px;
+}
+
+#footerBox .footerLink .links {
+  color: #bbff33;
+  padding: 5px 10px;
+}
+
+#footerBox .footerLink .links a {
+  color: #09906e;
+  padding-left: 3px;
+}
+
+#footerBox .footerLink img {
+  /*mini icona di fianco al num di cell*/
+  float: left;
+  width: 17px;
+}
+
+#footerBox .myLogo {
+  text-align: center;
+  margin: 15px 50px 5px 50px;
+}
+
+#footerBox .myLogo img {
+  width: 110px;
+}
+
+#footerBox .buttonClickMe {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/**********************************************************************************************************************************************************************/
+/**********************************************
+              **** M E D I A   Q U E R Y S   LE Z I O N E 55 ****
+                              === RESPONSIVE ===
+                **********************************************/
+@media only screen and (min-width: 667px) {
+  header #bigBar {
+    display: none;
+  }
+  header #smallBar #mySidebarSmall {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.9)));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+    opacity: .94;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    padding-top: 10px;
+    border-right: 1px solid #528415;
+  }
+  header #smallBar #mySidebarSmall .titelLeftSide .sorname {
+    text-align: center;
+    margin: 9px;
+    font-size: 2.7rem;
+    font-family: 'Bebas Neue', cursive;
+    margin-top: 5px;
+    color: #2db300;
+  }
+  header #smallBar #mySidebarSmall .titelLeftSide h4 {
+    margin-top: 7px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #e79f04;
+    font-size: 1.7rem;
+    font-family: 'Dancing Script', cursive;
+  }
+  header #smallBar #mySidebarSmall .menuNav .closebtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: black;
+    color: #bbff33;
+    padding: 5px 10px 8px 10px;
+    border: none;
+  }
+  header #smallBar #mySidebarSmall .menuNav .material-icons {
+    /*mini icona di fianco al num di cell*/
+    font-size: 23px;
+    color: #e79f04;
+    float: left;
+  }
+  header #smallBar #mySidebarSmall .menuNav li a {
+    padding: 2px 8px 8px 20px;
+    color: #09d3a0;
+    font-size: 1.2rem;
+    /*dimensioni testo*/
+    text-transform: uppercase;
+    /*tutto il testo maiuscolo*/
+    display: block;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  header #smallBar #mySidebarSmall .menuNav hr {
+    border: 0;
+    border-top: 3px solid #0ACE99;
+    margin-left: 1px;
+    margin-top: 10px;
+    width: 25px;
+    margin-top: 5px;
+  }
+  header #smallBar #mySidebarSmall .myFoto {
+    border-radius: 100%;
+    margin-top: 25px;
+    margin-left: 13px;
+    width: 200px;
+  }
+  body .openbtn {
+    position: fixed;
+    border: 1.8px solid #09d3a0;
+    opacity: 0.7;
+    top: 15px;
+    left: 15px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #111;
+    color: #09d3a0;
+    padding: 10px 15px;
+  }
+  #flex #main-content #box4 a {
+    color: #00e6e6;
+    font-size: 1.2rem;
+  }
+  .buttonCookWithMe {
+    float: right;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+    border: 3px solid #e4640f;
+    color: #ffd700;
+    padding: 15px 120px;
+    margin: 5px 60px 30px 0;
+    text-decoration: none;
+    font-family: 'Passion One', cursive;
+    font-size: 2.5rem;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: 1.7s;
+    transition: 1.7s;
+  }
+  .buttonCookWithMe:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+  }
+  .buttonCookLiquid {
+    display: none;
+  }
+}
+
+#footerBox {
+  width: 100%;
+}
+
+#footerBox .myLogo {
+  text-align: center;
+  margin: 15px 50px 5px 50px;
+}
+
+#footerBox .myLogo img {
+  width: 110px;
+}
+
+#footerBox #seoChecker {
+  position: absolute;
+  right: 90px;
+}
+
+#footerBox #seoChecker img {
+  width: 6rem;
+}
+
+/***********************************************************************************************************************************************************************************************************************************************************************************************************/
+@media only screen and (min-width: 1277px) {
+  nav .closebtn {
+    display: none;
+  }
+  #main .openbtn {
+    display: none;
+  }
+  header #smallBar {
+    display: none;
+  }
+  header #bigBar {
+    display: inherit;
+  }
+  header #bigBar #mySidebar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    top: 0;
+    /*cosi header è attacato su*/
+    border-right: 1px solid #528415;
+    height: 100%;
+    width: 270px;
+    position: fixed;
+    /*permette di fissare il header sul lato sinistro*/
+  }
+  header #bigBar #mySidebar .titelLeftSide h4 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #e79f04;
+    font-size: 2.2rem;
+    font-family: 'Dancing Script', cursive;
+  }
+  header #bigBar #mySidebar .titelLeftSide .sorname {
+    text-align: center;
+    margin: 9px;
+    font-size: 3rem;
+    font-family: 'Bebas Neue', cursive;
+    margin-top: 15px;
+    color: #2db300;
+  }
+  header #bigBar #mySidebar nav .menuNav {
+    font-family: 'Lexend Zetta', sans-serif;
+    margin-top: 10px;
+    margin-left: -35px;
+    text-align: left;
+    list-style-type: none;
+    /*convertiamo una lista ordinata in una semplice (togliamo le paline su lato sinistra)*/
+  }
+  header #bigBar #mySidebar nav .menuNav .material-icons {
+    /*mini icona di fianco al num di cell*/
+    color: #e79f04;
+    float: left;
+  }
+  header #bigBar #mySidebar nav .menuNav li a {
+    margin-left: 15px;
+    color: #09906e;
+    font-size: 1.5rem;
+    /*dimensioni testo*/
+    text-transform: uppercase;
+    /*tutto il testo maiuscolo*/
+  }
+  header #bigBar #mySidebar nav .menuNav li a:hover {
+    color: #40f2c8;
+  }
+  header #bigBar #mySidebar nav .menuNav hr {
+    border: 0;
+    border-top: 3px solid #0ACE99;
+    margin-left: 1px;
+    margin-top: 10px;
+    width: 25px;
+  }
+  header #bigBar #mySidebar img {
+    border-radius: 100%;
+    margin-top: 19px;
+    margin-left: 25px;
+    width: 215px;
+  }
+  #mySidebar .lighteName:hover {
+    /*ilumino mio nome cog-me*/
+    color: #e79f04;
+    text-shadow: 0px 0 15px #e79f04;
+  }
+  #mySidebar .lighteSorname:hover {
+    /*ilumino mio nome cog-me*/
+    color: #e79f04;
+    text-shadow: 0px 0 15px #009900;
+  }
+  /********** MINE **********/
+  #flex {
+    float: right;
+    width: auto;
+  }
+  #flex #main-content {
+    width: 80%;
+    padding: 65px;
+    font-family: 'Kalam', cursive;
+    font-size: 1.7rem;
+  }
+  #flex #main-content h2 {
+    padding-top: 17px;
+    padding-left: 10px;
+    font-weight: lighter;
+    font-family: 'Lexend Zetta', sans-serif;
+    font-size: 2.1rem;
+    color: #bbff33;
+  }
+  #flex #main-content h3 {
+    font-size: 2.9rem;
+    font-weight: lighter;
+    color: #00e6e6;
+    font-family: 'Zen Dots', cursive;
+    margin-bottom: -2px;
+  }
+  #flex #main-content p {
+    margin-top: 3px;
+  }
+  #flex #main-content #box1 {
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 110px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../images/p5.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/p5.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-box-shadow: 0px 0px 9px 15px rgba(7, 7, 7, 0.9);
+            box-shadow: 0px 0px 9px 15px rgba(7, 7, 7, 0.9);
+    /*per fare la sfumatura. ordine di dati: asse X, asse Y, livello di trasparenza di sfumatura, difusione di sfumatura, e i colori. se vuoi l'ombra dal altro lato basta che inserisci il numero negativo sul asse X o Y (piano cartesiano)*/
+    border-radius: 7px;
+  }
+  #flex #main-content #box1 hr {
+    border: 0;
+    border-top: 3px solid #bbff33;
+    margin-left: 11px;
+    margin-top: 10px;
+    width: auto;
+  }
+  #flex #main-content #box1 .profText {
+    padding: 5px;
+  }
+  #flex #main-content #box2 {
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 170px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../images/p5.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/p5.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-box-shadow: 0px 0px 9px 15px rgba(7, 7, 7, 0.9);
+            box-shadow: 0px 0px 9px 15px rgba(7, 7, 7, 0.9);
+    /*per fare la sfumatura. ordine di dati: asse X, asse Y, livello di trasparenza di sfumatura, difusione di sfumatura, e i colori. se vuoi l'ombra dal altro lato basta che inserisci il numero negativo sul asse X o Y (piano cartesiano)*/
+    border-radius: 7px;
+  }
+  #flex #main-content #box2 hr {
+    border: 0;
+    border-top: 3px solid #bbff33;
+    margin-left: 11px;
+    margin-top: 10px;
+    width: auto;
+  }
+  #flex #main-content #box2 .profText {
+    padding: 5px;
+  }
+  #flex #main-content #box4 {
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 170px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../images/p5.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/p5.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-box-shadow: 0px 0px 9px 15px rgba(7, 7, 7, 0.9);
+            box-shadow: 0px 0px 9px 15px rgba(7, 7, 7, 0.9);
+    /*per fare la sfumatura. ordine di dati: asse X, asse Y, livello di trasparenza di sfumatura, difusione di sfumatura, e i colori. se vuoi l'ombra dal altro lato basta che inserisci il numero negativo sul asse X o Y (piano cartesiano)*/
+    border-radius: 7px;
+  }
+  #flex #main-content #box4 hr {
+    border: 0;
+    border-top: 3px solid #bbff33;
+    margin-left: 11px;
+    margin-top: 10px;
+    width: auto;
+  }
+  #flex #main-content #box4 .profText {
+    padding: 5px;
+  }
+  #flex #main-content #box4 .profText p {
+    margin-top: 3px;
+  }
+  #flex #main-content #box4 .myContacts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding: 5px;
+    font-size: 1.3rem;
+  }
+  #flex #main-content #box4 .myContacts .links {
+    color: #bbff33;
+    padding: 5px 10px;
+  }
+  #flex #main-content #box4 .myContacts .links a {
+    font-size: 2rem;
+    color: #00e6e6;
+    padding-left: 3px;
+  }
+  #flex #main-content #box4 .myContacts img {
+    /*mini icona di fianco al num di cell*/
+    float: left;
+    width: 23px;
+  }
+  #flex #main-content #box4 .myContacts .links {
+    -webkit-transition: .9s;
+    transition: .9s;
+    /*applichiamo un ritardo d'azzione (di ritorno)*/
+  }
+  #flex #main-content #box4 .myContacts .links:hover {
+    -webkit-transition: .3s;
+    transition: .3s;
+    /*applichiamo un ritardo d'azzione*/
+    -webkit-transform: scale(1.7);
+            transform: scale(1.7);
+  }
+  /*
+      ******************************************
+      *************** F O O T E R **************
+      ******************************************
+      */
+  /************ beck to up button ******************/
+  .btn:hover {
+    height: 80px;
+  }
+  #footerBox {
+    clear: both;
+    /*questo comando esola "FOOTER" da gli "FLOAT", cioè footer rimane sempre al suo posto*/
+    width: 82.2%;
+    border-top: 1px solid #528415;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.7))), url(../images/p4.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../images/p4.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-size: 1.1rem;
+    /*dimensione del testo*/
+  }
+  #footerBox .footerText {
+    text-align: center;
+  }
+  #footerBox .footerText .material-icons {
+    /*mini icona di fianco al num di cell*/
+    font-size: 13px;
+  }
+  #footerBox .footerText .text1 {
+    padding-left: 14px;
+  }
+  #footerBox .footerLink {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding: 5px;
+  }
+  #footerBox .footerLink .links {
+    color: #bbff33;
+    padding: 5px 10px;
+  }
+  #footerBox .footerLink .links a {
+    color: #09906e;
+    padding-left: 3px;
+  }
+  #footerBox .footerLink img {
+    /*mini icona di fianco al num di cell*/
+    float: left;
+    width: 17px;
+  }
+  #footerBox .myLogo {
+    text-align: center;
+    margin: 15px 50px 5px 50px;
+  }
+  #footerBox .myLogo img {
+    width: 110px;
+  }
+  #footerBox .links a:hover {
+    color: #40f2c8;
+    text-decoration: underline;
+  }
+  /*************************************
+        ======= K E Y F R A M E S =======
+      ======= A N I M A T I O N S =======
+    *************************************/
+  #mySidebar {
+    opacity: 0;
+    -webkit-animation-name: magicBar;
+            animation-name: magicBar;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-delay: .7s;
+            animation-delay: .7s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-direction: normal;
+            animation-direction: normal;
+  }
+  @-webkit-keyframes magicBar {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateX(-50px);
+              transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
+    }
+  }
+  @keyframes magicBar {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateX(-50px);
+              transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
+    }
+  }
+  .titelLeftSide h1 {
+    opacity: 0;
+    -webkit-animation-name: magic-text;
+            animation-name: magic-text;
+    -webkit-animation-duration: 1.2s;
+            animation-duration: 1.2s;
+    -webkit-animation-delay: 3s;
+            animation-delay: 3s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  @-webkit-keyframes magic-text {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateX(-50px);
+              transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
+    }
+  }
+  @keyframes magic-text {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateX(-50px);
+              transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px);
+    }
+  }
+  .titelLeftSide h4 {
+    opacity: 0;
+    -webkit-animation-name: fraseH4;
+            animation-name: fraseH4;
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+  }
+  @-webkit-keyframes fraseH4 {
+    0% {
+      opacity: 0;
+      -webkit-transform: translatey(-50px);
+              transform: translatey(-50px);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translatey(0px);
+              transform: translatey(0px);
+    }
+  }
+  @keyframes fraseH4 {
+    0% {
+      opacity: 0;
+      -webkit-transform: translatey(-50px);
+              transform: translatey(-50px);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translatey(0px);
+              transform: translatey(0px);
+    }
+  }
+}
+
+/********************************************************************************************************************************************************************************************************************************/
+@media only screen and (max-width: 667px) {
+  header #bigBar {
+    display: none;
+  }
+  /********  SIDE BAR MOBILE  *********/
+  header #smallBar #mySidebarSmall {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.9)));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+    opacity: .94;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    padding-top: 10px;
+    border-right: 1px solid #528415;
+  }
+  header #smallBar #mySidebarSmall .titelLeftSide .sorname {
+    text-align: center;
+    margin: 9px;
+    font-size: 2.7rem;
+    font-family: 'Bebas Neue', cursive;
+    margin-top: 5px;
+    color: #2db300;
+  }
+  header #smallBar #mySidebarSmall .titelLeftSide h4 {
+    margin-top: 15px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #e79f04;
+    font-size: 1.7rem;
+    font-family: 'Dancing Script', cursive;
+  }
+  header #smallBar #mySidebarSmall .menuNav .closebtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: black;
+    color: #bbff33;
+    padding: 5px 10px 8px 10px;
+    border: none;
+  }
+  header #smallBar #mySidebarSmall .menuNav .material-icons {
+    /*mini icona di fianco al num di cell*/
+    font-size: 23px;
+    color: #e79f04;
+    float: left;
+  }
+  header #smallBar #mySidebarSmall .menuNav li a {
+    padding: 2px 8px 8px 20px;
+    color: #09d3a0;
+    font-size: 1.2rem;
+    /*dimensioni testo*/
+    text-transform: uppercase;
+    /*tutto il testo maiuscolo*/
+    display: block;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  header #smallBar #mySidebarSmall .menuNav hr {
+    border: 0;
+    border-top: 3px solid #0ACE99;
+    margin-left: 1px;
+    margin-top: 10px;
+    width: 25px;
+    margin-top: 5px;
+  }
+  header #smallBar #mySidebarSmall .myFoto {
+    border-radius: 100%;
+    margin-top: 5px;
+    margin-left: 13px;
+    width: 200px;
+  }
+  body .openbtn {
+    position: fixed;
+    border: 1.8px solid #09d3a0;
+    top: 15px;
+    left: 15px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.7;
+    background-color: #111;
+    color: #09d3a0;
+    padding: 10px 15px;
+  }
+  /********** SDB END **********/
+  /*
+        ************************************
+        ************** M A I N *************
+        ************************************
+        */
+  #main-content {
+    margin-top: 70px;
+    float: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: auto;
+    font-family: 'Kalam', cursive;
+    font-size: 1.3rem;
+  }
+  #main-content h2 {
+    padding-top: 17px;
+    font-weight: lighter;
+    font-family: 'Lexend Zetta', sans-serif;
+    font-size: 1.5rem;
+    color: #bbff33;
+  }
+  #main-content h3 {
+    font-size: 2.3rem;
+    font-weight: lighter;
+    color: #00e6e6;
+    font-family: 'Zen Dots', cursive;
+    margin-bottom: -2px;
+  }
+  #main-content #box1 {
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 100px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../images/p5.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/p5.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-box-shadow: 0px 0px 9px 15px rgba(7, 7, 7, 0.9);
+            box-shadow: 0px 0px 9px 15px rgba(7, 7, 7, 0.9);
+    /*per fare la sfumatura. ordine di dati: asse X, asse Y, livello di trasparenza di sfumatura, difusione di sfumatura, e i colori. se vuoi l'ombra dal altro lato basta che inserisci il numero negativo sul asse X o Y (piano cartesiano)*/
+    border-radius: 7px;
+  }
+  #main-content #box1 hr {
+    border: 0;
+    border-top: 3px solid #bbff33;
+    margin-left: 11px;
+    margin-top: 10px;
+    width: auto;
+  }
+  #main-content #box1 .profText {
+    padding: 5px;
+  }
+  #main-content #box2 {
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 150px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../images/p5.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/p5.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-box-shadow: 0px 0px 9px 15px rgba(7, 7, 7, 0.9);
+            box-shadow: 0px 0px 9px 15px rgba(7, 7, 7, 0.9);
+    /*per fare la sfumatura. ordine di dati: asse X, asse Y, livello di trasparenza di sfumatura, difusione di sfumatura, e i colori. se vuoi l'ombra dal altro lato basta che inserisci il numero negativo sul asse X o Y (piano cartesiano)*/
+    border-radius: 7px;
+  }
+  #main-content #box2 hr {
+    border: 0;
+    border-top: 3px solid #bbff33;
+    margin-left: 11px;
+    margin-top: 10px;
+    width: auto;
+  }
+  #main-content #box2 .profText {
+    padding: 5px;
+  }
+  #main-content #box2 .profText p {
+    margin-top: 3px;
+  }
+  #main-content #box4 {
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 150px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../images/p5.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/p5.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-box-shadow: 0px 0px 9px 15px rgba(7, 7, 7, 0.9);
+            box-shadow: 0px 0px 9px 15px rgba(7, 7, 7, 0.9);
+    /*per fare la sfumatura. ordine di dati: asse X, asse Y, livello di trasparenza di sfumatura, difusione di sfumatura, e i colori. se vuoi l'ombra dal altro lato basta che inserisci il numero negativo sul asse X o Y (piano cartesiano)*/
+    border-radius: 7px;
+  }
+  #main-content #box4 hr {
+    border: 0;
+    border-top: 3px solid #bbff33;
+    margin-left: 11px;
+    margin-top: 10px;
+    width: auto;
+  }
+  #main-content #box4 .profText {
+    padding: 5px;
+  }
+  #main-content #box4 .profText p {
+    margin-top: 3px;
+  }
+  #main-content #box4 .myContacts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 5px;
+  }
+  #main-content #box4 .myContacts .links {
+    color: #bbff33;
+    padding: 5px 10px;
+  }
+  #main-content #box4 .myContacts .links a {
+    font-size: 1.7rem;
+    color: #00e6e6;
+    padding-left: 1px;
+  }
+  #main-content #box4 .myContacts .links img {
+    /*mini icona*/
+    float: left;
+    width: 1.7rem;
+  }
+  .buttonCookWithMe {
+    display: none;
+  }
+  a .buttonCookLiquid {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    display: block;
+    margin: 10px auto;
+    padding: 10px 80px;
+    border: 3px solid #e4640f;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 300px;
+    overflow: hidden;
+    border-radius: 70px;
+  }
+  .buttonCookLiquid span {
+    position: relative;
+    color: #ffaa49;
+    font-family: 'Passion One', cursive;
+    font-size: 1.9rem;
+    z-index: 1;
+  }
+  .buttonCookLiquid .liquid {
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 300px;
+    height: 265px;
+    background: #2b0be4;
+    -webkit-box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    -webkit-transition: .5s;
+    transition: .5s;
+  }
+  .buttonCookLiquid .liquid::after,
+  .buttonCookLiquid .liquid::before {
+    content: '';
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, -75%);
+    transform: translate(-50%, -75%);
+    background: #fff;
+  }
+  .buttonCookLiquid .liquid::before {
+    border-radius: 45%;
+    background: #141414;
+    -webkit-animation: animate 5s linear infinite;
+    animation: animate 5s linear infinite;
+  }
+  .buttonCookLiquid .liquid::after {
+    border-radius: 40%;
+    background: rgba(20, 20, 20, 0.5);
+    -webkit-animation: animate 10s linear infinite;
+    animation: animate 10s linear infinite;
+  }
+  button:hover .liquid {
+    top: -120px;
+  }
+  @-webkit-keyframes animate {
+    0% {
+      -webkit-transform: translate(-50%, -75%) rotate(0deg);
+      transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100% {
+      -webkit-transform: translate(-50%, -75%) rotate(360deg);
+      transform: translate(-50%, -75%) rotate(360deg);
+    }
+  }
+  @keyframes animate {
+    0% {
+      -webkit-transform: translate(-50%, -75%) rotate(0deg);
+      transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100% {
+      -webkit-transform: translate(-50%, -75%) rotate(360deg);
+      transform: translate(-50%, -75%) rotate(360deg);
+    }
+  }
+  /*
+          ******************************************
+          *************** F O O T E R **************
+          ******************************************
+          */
+  .btn {
+    bottom: 20px;
+    right: 20px;
+    width: 37px;
+    height: 37px;
+    font-size: 1.5rem;
+    background-color: #2eb82e;
+    color: black;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    opacity: .5;
+  }
+  #footerBox {
+    clear: both;
+    /*questo comando esola "FOOTER" da gli "FLOAT", cioè footer rimane sempre al suo posto*/
+    position: relative;
+    width: 100%;
+    border-top: 1px solid #528415;
+    font-size: .8rem;
+    /*dimensione del testo*/
+  }
+  #footerBox .footerText {
+    color: #ffad33;
+    text-align: center;
+  }
+  #footerBox .footerText .material-icons {
+    /*mini icona di fianco al num di cell*/
+    font-size: 1.2rem;
+  }
+  #footerBox .footerText .text1 {
+    padding-left: 7px;
+  }
+  #footerBox .footerLink {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  #footerBox .footerLink .links {
+    color: #bbff33;
+    padding: 5px 1px;
+  }
+  #footerBox .footerLink .links a {
+    color: #09906e;
+  }
+  #footerBox .footerLink img {
+    /*mini icona di fianco al num di cell*/
+    float: left;
+    width: 1rem;
+  }
+  #footerBox .myLogo {
+    text-align: center;
+    margin: 15px 50px 5px 50px;
+  }
+  #footerBox .myLogo img {
+    width: 110px;
+  }
+  #seoChecker {
+    position: absolute;
+    left: 20px;
+    bottom: 5px;
+  }
+  #seoChecker img {
+    width: 5rem;
+  }
+}
+
+/********************************************************************************************************************************************************************************************************************************/
+@media only screen and (max-width: 373px) {
+  /********  SIDE BAR MOBILE  *********/
+  header #smallBar #mySidebarSmall {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.9)));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+    opacity: .94;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    padding-top: 10px;
+    border-right: 1px solid #528415;
+  }
+  header #smallBar #mySidebarSmall .titelLeftSide .sorname {
+    text-align: center;
+    margin: 9px;
+    font-size: 2.7rem;
+    font-family: 'Bebas Neue', cursive;
+    margin-top: 5px;
+    color: #2db300;
+  }
+  header #smallBar #mySidebarSmall .titelLeftSide h4 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #e79f04;
+    font-size: 1.5rem;
+    font-family: 'Dancing Script', cursive;
+  }
+  header #smallBar #mySidebarSmall .menuNav .closebtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: black;
+    color: #bbff33;
+    padding: 5px 10px 8px 10px;
+    border: none;
+  }
+  header #smallBar #mySidebarSmall .menuNav .material-icons {
+    /*mini icona NAV*/
+    font-size: 17px;
+    color: #e79f04;
+    float: left;
+  }
+  header #smallBar #mySidebarSmall .menuNav li a {
+    padding: 2px 8px 5px 20px;
+    color: #09d3a0;
+    font-size: 1rem;
+    /*dimensioni testo*/
+    text-transform: uppercase;
+    /*tutto il testo maiuscolo*/
+    display: block;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  header #smallBar #mySidebarSmall .menuNav hr {
+    border: 0;
+    border-top: 3px solid #0ACE99;
+    margin-left: 1px;
+    margin-top: 10px;
+    width: 19px;
+    margin-top: 5px;
+  }
+  header #smallBar #mySidebarSmall .myFoto {
+    border-radius: 100%;
+    margin-top: -15px;
+    margin-left: 39px;
+    width: 150px;
+  }
+  #box4 .myContacts .links {
+    font-size: .7rem;
+  }
+  .footerLink .links {
+    font-size: .7rem;
+  }
+  #footerBox .links img {
+    width: 10px;
+  }
+}
+
+/********************************************************************************************************************************************************************************************************************************/
+@media only screen and (min-width: 1600px) {
+  #flex {
+    float: right;
+    width: 65%;
+    margin-right: .6rem;
+  }
+  #flex #main-content {
+    width: auto;
+    padding: 65px;
+    padding-right: 85px;
+    font-family: 'Kalam', cursive;
+    font-size: 1.8rem;
+  }
+  footer #footerBox {
+    width: 88%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

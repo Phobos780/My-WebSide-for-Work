@@ -1,0 +1,721 @@
+
+
+
+        /*************** G E N E R A L ***************/
+
+*{
+   box-sizing: border-box;
+}
+
+$linkColor: #09906e;
+$titleRighteColor: #bbff33;
+
+@mixin myLogo {
+  width: 110px;
+  
+}
+
+@mixin backBtn($fSixe) {
+  border: none;
+  border-radius: 10px;
+  color: rgb(232, 236, 20);
+  padding: 7px 12px;
+  text-decoration: none;
+  font-size: $fSixe;
+  background-color: rgb(8, 8, 1);
+  border: 3px solid #eeea09;
+  transition: 0.7s;
+}
+
+@mixin titleRighte{
+  font-weight: lighter;
+  font-family: 'Lexend Zetta', sans-serif;
+  font-size: 2.5rem;
+  color: $titleRighteColor;
+}
+
+@mixin links{
+  color: $titleRighteColor;
+  padding: 5px 10px;
+}
+
+
+html{/*la dimensione generale per tutti i testi*/
+  font-size: 75%;
+}
+
+
+body{
+  background: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;/*dimensione testo nel body*/
+
+}
+
+a{
+  text-decoration: none;/*sottoliniatura del testo nei link*/
+}
+
+.clearfix::after{/*lezione 52 clearfix. in pochi parole uniamo tutti gli oggetti nella sezione gallery in un unico oggetto*/
+  content: "";
+  clear: both;
+  display: table;
+}
+
+        /*
+        ************************************
+        ************** M A I N *************
+        ************************************
+        */
+
+body{
+  background-image: url(../images/p1-1.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+    header{
+      border-bottom: thick double #bbff33;
+      h1{
+        text-align: center;
+        @include titleRighte;
+        font-size: 3.1rem;                
+      }      
+      form{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        button{
+          @include backBtn(10px);
+          padding: 7px 12px;
+        }
+      }
+    }
+    #mainContent{
+      #mineSection{  
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        .boxCV{
+          color: rgb(189, 253, 255);
+          width: auto;
+          background-color: #243142;
+          opacity: .9;/*diamo un efetto trasparenza*/
+          margin: 25px;
+          box-shadow: 0px 0px 7px 9px rgba(10, 63, 235, 0.596);/*per fare la sfumatura. ordine di dati: asse X, asse Y, livello di trasparenza di sfumatura, difusione di sfumatura, e i colori. se vuoi l'ombra dal altro lato basta che inserisci il numero negativo sul asse X o Y (piano cartesiano)*/
+          border-radius: 7px;
+          table{
+            border: 2px solid rgb(236, 240, 6);
+            border-spacing: 15px;
+            margin: 10px;
+            caption{
+              font-size: 3rem;
+              color: rgb(250, 230, 115);
+            }
+            tr{
+              th{
+                border: 2px solid rgb(236, 240, 6);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+          /*
+          ******************************************
+          *************** F O O T E R **************
+          ******************************************
+          */
+          
+/************ beck to up button ******************/
+
+.btn{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  background-color: #2eb82e;
+  color: black;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.4s;
+  opacity: .5;
+  z-index: 1;
+
+
+}
+
+#footerBoxCV{
+  position: relative;//serve per bottone "home"
+  clear: both;/*questo comando esola "FOOTER" da gli "FLOAT", cioè footer rimane sempre al suo posto*/
+  width: 100%;
+  border-top: 1px solid #528415;
+  font-size: 1.2rem;/*dimensione del testo*/
+  //padding: 10px 0;/*definisco la ampiezza del box*/
+  .footerText{
+    color: #ffad33;
+    text-align: center;
+    .material-icons{/*mini icona di fianco al num di cell*/
+    font-size: 13px;
+    }
+    .text1{
+      padding-left: 14px;
+    }
+  }
+  .footerLink{
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+
+    .links{
+      @include links;
+      a{
+        color: $linkColor;
+        padding-left: 3px;
+      }
+    }
+    img{/*mini icona di fianco al num di cell*/
+    float: left;
+    width: 17px;
+    }
+  }
+
+  .myLogo{
+    text-align: center;
+    margin: 15px 50px 15px 50px;
+    img{
+      @include myLogo;
+    }
+  }
+  .cvButton{
+    form{
+      position: absolute;
+      bottom: 25px;
+      left: 15px;
+      button{
+        @include backBtn(10px);
+        padding: 7px 12px;
+
+      }
+    }
+  }
+}
+
+h1 {/*animazione titolo CV*/
+  opacity: 0;
+  animation-name: cvTitle;
+  animation-duration: 1.5s;
+  animation-delay: .5s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes cvTitle{
+  0%{
+    opacity: 0;
+    transform: translatey(-50px);
+  }
+  100%{
+    opacity: 1;
+    transform: translatey(0px);
+  }
+}
+
+
+                /**********************************************
+              **** M E D I A   Q U E R Y S   LE Z I O N E 55 ****
+                              === RESPONSIVE ===
+                **********************************************/               
+/**************************************************************************/
+@media only screen and (min-width: 668px) {
+
+  /************** HEADER **************/
+  #header{
+    margin-top: 20px;
+    border-bottom: thick double #bbff33;
+    margin-bottom: 55px;
+    h1{
+      text-align: center;
+      @include titleRighte;
+      font-size: 2.3rem;                
+    }      
+    form{
+      position: absolute;
+      top: 95px;
+      left: 10px;
+      button{
+        @include backBtn(12px);
+        padding: 7px 12px;
+      
+      }
+    }
+  }
+
+
+
+  /************* MAINE ***************/
+  body, #mineSection, #cvPicture{
+    td{   
+      img{
+        float: right;
+        width: 170px;
+        padding: 3px;
+        //margin: -15px 5px 5px 5px;
+        border-radius: 10px;
+        border: 2px solid rgb(6, 141, 35);
+                
+      }
+    }    
+  }
+
+   body #mainContent{
+      #mineSection{  
+        .boxCV{
+          table{
+            border: 2px solid rgb(236, 240, 6);
+            border-spacing: 15px;
+            margin: 10px;
+            caption{
+              font-size: 2.5rem;
+              color: rgb(250, 230, 115);
+            }
+            tr{
+              font-size: 1.3rem;
+              th{
+                border: 2px solid rgb(236, 240, 6);
+
+              }
+          } 
+        }
+      }
+    }
+  }
+
+               /*
+          ******************************************
+          *************** F O O T E R **************
+          ******************************************
+          */
+          
+      
+  /************ beck to up button ******************/
+
+  .btn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 37px;
+    height: 37px;
+    font-size: 1.5rem;
+    background-color: #2eb82e;
+    color: black;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.4s;
+    opacity: .5;
+
+  }
+
+  #footerBoxCV{
+    margin-top: 30px;
+    position: relative;//serve per bottone "back"
+    clear: both;/*questo comando esola "FOOTER" da gli "FLOAT", cioè footer rimane sempre al suo posto*/
+    width: 100%;
+    border-top: 1px solid #528415;
+    font-size: .8rem;/*dimensione del testo*/
+    .footerText{
+      color: #ffad33;
+      text-align: center;
+      .material-icons{/*mini icona di fianco al num di cell*/
+      font-size: 13px;
+      }
+      .text1{
+        padding-left: 7px;
+      }
+    }
+    .footerLink{
+      display: flex;
+      justify-content: space-around;
+      
+      .links{
+        color: $titleRighteColor;
+        padding: 5px 1px;
+        a{
+          color: $linkColor;
+        }
+      }
+      img{/*mini icona di fianco al num di cell*/
+      float: left;
+      width: 12px;
+      }
+    }
+    .myLogo{
+      text-align: center;
+      margin: 15px 50px 15px 50px;
+      img{
+        @include myLogo;
+      }
+    }
+    .cvButton{
+      form{
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        button{
+          @include backBtn(12px);
+          padding: 7px 12px;
+
+        }
+      }
+    }
+    #seoChecker{
+      position: absolute;
+      left: 20px;
+      bottom: 60px;
+      img{
+        width: 45%;
+      }
+    }
+  }
+}
+
+/**************************************************************************/
+@media only screen and (min-width: 1277px) {
+
+  body #header form{
+    button:hover{
+      background: #eeea09;
+      transition: .5s;
+      color: black;
+    }
+  }
+
+  body, #mineSection, #cvPicture{
+    td{   
+      img{
+        float: right;
+        width: 250px;
+        padding: 3px;
+        margin: 5px 5px 5px 5px;
+        border-radius: 10px;
+        border: 2px solid rgb(6, 141, 35);
+        
+      }
+    }    
+  }
+
+                /*
+      ******************************************
+      *************** F O O T E R **************
+      ******************************************
+      */
+
+
+  footer #footerBoxCV{
+    margin-top: 50px;
+    font-size: 1.1rem;
+    .links a:hover{
+      color: #40f2c8;
+      text-decoration: underline;
+    }
+    .cvButton {
+      button:hover{
+        background: #eeea09;
+        transition: .5s;
+        color: black;
+      }
+    }
+    .links img{/*mini icona di fianco al num di cell*/
+      float: left;
+      width: 17px;
+      }
+  }
+
+      /************ beck to up button ******************/
+
+    .btn{
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      font-size: 2rem;
+      background-color: #2eb82e;
+      color: black;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      transition: all 0.4s;
+      opacity: .5;
+
+    }
+    .btn:hover{
+      height: 80px;
+    }
+   
+}
+
+/**************************************************************************/
+@media only screen and (max-width: 668px) {
+
+
+  /*
+  ************************************
+  ************** M A I N *************
+  ************************************
+  */
+
+  body, #mineSection, #cvPicture{
+    td{//my picture
+      img{
+        float: right;
+        width: 110px;
+        padding: 2px;
+        margin: 15px 1px 1px 5px;
+        border-radius: 10px;
+        border: 2px solid rgb(6, 141, 35);
+        
+      }
+    }    
+  }
+
+  body{
+    background-image: url(../images/p2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+      #header{
+        margin-top: 20px;
+        border-bottom: thick double #bbff33;
+        margin-bottom: 55px;
+        h1{
+          text-align: center;
+          @include titleRighte;
+          font-size: 1.9rem;                
+        }      
+        form{
+          position: absolute;
+          top: 85px;
+          left: 10px;
+          button{
+            @include backBtn(10px);
+            padding: 7px 12px;
+          
+          }
+        }
+      }
+      #mainContent{
+        #mineSection{  
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          //justify-content: space-around;
+          .boxCV{
+            color: rgb(189, 253, 255);
+            width: auto;
+            background-color: #243142;
+            opacity: .9;/*diamo un efetto trasparenza*/
+            margin: 25px;
+            box-shadow: 0px 0px 7px 9px rgba(10, 63, 235, 0.596);
+            border-radius: 7px;  
+            table{
+              border: 2px solid rgb(236, 240, 6);
+              border-spacing: 15px;
+              margin: 10px;
+              caption{
+                font-size: 2.2rem;
+                color: rgb(250, 230, 115);
+              }
+              tr{
+                font-size: 1.2rem;
+                th{
+                  border: 2px solid rgb(236, 240, 6);
+
+                }
+            } 
+          }
+        }
+      }
+    }
+  }
+        
+                /*
+          ******************************************
+          *************** F O O T E R **************
+          ******************************************
+          */
+          
+      
+ /************ beck to up button ******************/
+
+  .btn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 37px;
+    height: 37px;
+    font-size: 1.5rem;
+    background-color: #2eb82e;
+    color: black;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.4s;
+    opacity: .5;
+
+  }
+
+  #footerBoxCV{
+    margin-top: 30px;
+    position: relative;//serve per bottone "back"
+    clear: both;/*questo comando esola "FOOTER" da gli "FLOAT", cioè footer rimane sempre al suo posto*/
+    width: 100%;
+    border-top: 1px solid #528415;
+    font-size: .8rem;/*dimensione del testo*/
+    .footerText{
+      color: #ffad33;
+      text-align: center;
+      .material-icons{/*mini icona di fianco al num di cell*/
+      font-size: 13px;
+      }
+      .text1{
+        padding-left: 7px;
+      }
+    }
+    .footerLink{
+      display: flex;
+      justify-content: space-around;
+      
+      .links{
+        color: $titleRighteColor;
+        padding: 5px 1px;
+        a{
+          color: $linkColor;
+        }
+      }
+      img{/*mini icona di fianco al num di cell*/
+      float: left;
+      width: 9px;
+      }
+    }
+    .myLogo{
+      text-align: center;
+      margin: 15px 50px 15px 50px;
+      img{
+        @include myLogo;
+      }
+    }
+    .cvButton{
+      form{
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        button{
+          @include backBtn(10px);
+          padding: 7px 12px;
+
+        }
+      }
+    }
+    #seoChecker{
+      position: absolute;
+      left: 20px;
+      bottom: 60px;
+      img{
+        width: 35%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 373px) {
+
+  body{
+     #header{
+        margin-top: 30px;
+        border-bottom: thick double #bbff33;
+        margin-bottom: 55px;
+        h1{
+          text-align: center;
+          @include titleRighte;
+          font-size: 1.5rem;                
+        }
+          form{
+            position: absolute;
+            bottom: 5px;
+            left: 15px;
+            button{
+              @include backBtn(7px);
+              padding: 5px 10px;
+            }
+          }     
+      }
+    }
+
+  body #mineSection #cvPicture{
+    td{//my picture
+      img{
+        float: right;
+        width: 90px;
+        padding: 2px;
+        margin: 2px 1px 1px 5px;
+        border-radius: 10px;
+        border: 2px solid rgb(6, 141, 35);
+        
+      }
+    }    
+  }
+
+    #footerBoxCV{
+      position: relative;
+      .footerLink{
+        font-size: .6rem;
+      }
+    .cvButton{
+      form{
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        button{
+          @include backBtn(7px);
+          padding: 5px 10px;
+        }
+      }
+    }
+    #seoChecker{
+      position: absolute;
+      left: 10px;
+      bottom: 50px;
+      img{
+        width: 35%;
+      }
+    }
+  }
+
+  /************ beck to up button ******************/
+
+  .btn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+    background-color: #2eb82e;
+    color: black;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.4s;
+    opacity: .5;
+
+  }
+}
