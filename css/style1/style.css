@@ -1136,7 +1136,7 @@ header nav .menuNav hr {
   .buttonCookWithMe {
     display: none;
   }
-  a .buttonCookLiquid {
+  form .buttonCookLiquid {
     background-color: rgba(0, 0, 0, 0.7);
     position: relative;
     display: block;
